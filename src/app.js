@@ -8,6 +8,9 @@ const forecast = require('./utils/forecast')
 // console.log(path.join(__dirname, '../public'))
 
 const app = express()
+
+const port = process.env.PORT || 8000 
+
 //define paths for express config
 const publicdirpath = path.join(__dirname, '../public') //one time use function
 const viewspath = path.join(__dirname, '../templates/views')
@@ -114,6 +117,6 @@ app.get('*', (req,res)=> {
 
 
 
-app.listen(8000, () => {            //at one time using function
-    console.log('server is on')
+app.listen(port, () => {            //at one time using function
+    console.log('server is on port' +port)
 })
